@@ -1,6 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.AchievementVO;
+import com.example.demo.entity.AdminVO;
 import com.example.demo.entity.InterfaceVO;
+import com.example.demo.entity.TeachVO;
 
 import java.util.List;
 
@@ -9,5 +12,9 @@ import java.util.List;
  */
 public interface InterfaceService {
 
-    List<InterfaceVO> getList();
+    List<TeachVO> getTeach();
+
+    List<AdminVO> getAdmin();
+
+    List<AchievementVO> getAch();
 }

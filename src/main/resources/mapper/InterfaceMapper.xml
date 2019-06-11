@@ -3,8 +3,46 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.InterfaceDao">
 
-	<select id="getList" resultType="list">
-		select id from *****
+	<select id="getTeach" resultType="com.example.demo.entity.TeachVO">
+
+		SELECT
+		  `id` ,
+		  `course`,
+		  `coursetime` ,
+		  `classroom` ,
+		  `teacher` ,
+		  `type`
+		  FROM
+		  `interface_teach`
+
 	</select>
 
+	<select id="getAdmin" resultType="com.example.demo.entity.AdminVO">
+
+		SELECT
+		  `id` ,
+		  `name`,
+		  `student_count` AS studentCount,
+		  `teacher_count` AS teacherCount,
+		  `teacher` ,
+		  `type`
+		  FROM
+		  `interface_admin`
+	</select>
+
+	<select id="getAch" resultType="com.example.demo.entity.AchievementVO">
+
+		SELECT
+		  `id` ,
+		  `type`,
+		  `coursename` ,
+		  `credit` ,
+		  `teacher` ,
+		  `point` ,
+		  `course_count` AS courseCount,
+		  `pass`
+		  FROM
+		  `interface_achievement`
+
+	</select>
 </mapper>

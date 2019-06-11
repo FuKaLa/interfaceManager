@@ -1,6 +1,9 @@
 package com.example.demo.dao;
 
+import com.example.demo.entity.AchievementVO;
+import com.example.demo.entity.AdminVO;
 import com.example.demo.entity.InterfaceVO;
+import com.example.demo.entity.TeachVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +15,9 @@ import java.util.List;
 @Mapper
 @Repository
 public interface InterfaceDao {
-    List<InterfaceVO> getList();
+    List<TeachVO> getTeach();
+
+    List<AdminVO> getAdmin();
+
+    List<AchievementVO> getAch();
 }
