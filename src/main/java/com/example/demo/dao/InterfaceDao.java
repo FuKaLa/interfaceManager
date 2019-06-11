@@ -5,6 +5,8 @@ import com.example.demo.entity.AdminVO;
 import com.example.demo.entity.InterfaceVO;
 import com.example.demo.entity.TeachVO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.intellij.lang.annotations.JdkConstants;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,5 +21,5 @@ public interface InterfaceDao {
 
     List<AdminVO> getAdmin();
 
-    List<AchievementVO> getAch();
+    List<AchievementVO> getAch(@Param("type") Integer type);
 }

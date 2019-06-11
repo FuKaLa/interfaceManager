@@ -16,5 +16,5 @@ public interface InterfaceService {
 
     List<AdminVO> getAdmin();
 
-    List<AchievementVO> getAch();
+    List<AchievementVO> getAch(Integer type);
 }

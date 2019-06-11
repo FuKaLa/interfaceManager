@@ -31,7 +31,7 @@ public class InterfaceServiceImpl implements InterfaceService {
     }
 
     @Override
-    public List<AchievementVO> getAch() {
-        return interfaceDao.getAch();
+    public List<AchievementVO> getAch(Integer type) {
+        return interfaceDao.getAch(type);
     }
 }

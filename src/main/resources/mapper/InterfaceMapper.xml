@@ -30,7 +30,7 @@
 		  `interface_admin`
 	</select>
 
-	<select id="getAch" resultType="com.example.demo.entity.AchievementVO">
+	<select id="getAch" resultType="com.example.demo.entity.AchievementVO" parameterType="integer">
 
 		SELECT
 		  `id` ,
@@ -43,6 +43,7 @@
 		  `pass`
 		  FROM
 		  `interface_achievement`
+		  WHERE `type` = #{type}
 
 	</select>
 </mapper>
