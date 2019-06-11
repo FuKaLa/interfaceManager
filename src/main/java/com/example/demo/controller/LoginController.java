@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.LoginService;
 import com.example.demo.utils.R;
+import com.example.demo.utils.Tool;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.tools.Tool;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,16 +48,7 @@ public class LoginController {
         }else {
             return R.error("用户信息不完整");
         }
-        int userId = userService.getUserId(userName);
-        User user = userService.getUserById(userId);
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
-                .getRequest();
-//        String userId = (String) request.getSession().getAttribute("user_id");
-        request.getSession().setAttribute("user_id",userId);
-        request.getSession().setAttribute("username",userName);
-        request.getSession().setAttribute("role_id",roleId);
-        request.getSession().setMaxInactiveInterval(60*60);
-        return R.resultData(user);
+        return R.ok();
     }
 
 
